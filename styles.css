@@ -1,7 +1,41 @@
+/* Estilo de las anotaciones (burbujas) */
+.HotspotAnnotation { 
+  display: none; 
+  position: absolute; 
+  background: white; 
+  border-radius: 8px; 
+  padding: 12px; 
+  min-width: 200px; 
+  max-width: 280px; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3); 
+  transform: translate3d(-50%, -120%, 0); 
+  color: black; 
+  font-size: 14px; 
+  z-index: 1; 
+  pointer-events: auto; 
+}
+
+/* Mostrar anotación cuando el hotspot está activo */
+.Hotspot.active .HotspotAnnotation { 
+  display: block; 
+}
+
+/* Estilo básico de los hotspots */
+.Hotspot { 
+  width: 24px; 
+  height: 24px; 
+  border-radius: 50%; 
+  border: 3px solid white; 
+  background: #4285f4; 
+  cursor: pointer; 
+}
+
+/* Ocultar elementos hasta que model-viewer esté definido */
 :not(:defined) > * {
   display: none;
 }
 
+/* Ajustes generales */
 html {
   height: 100%;
 }
@@ -19,6 +53,7 @@ model-viewer {
   background-color: #ffffff;
 }
 
+/* Hotspot con sombra y transición */
 .Hotspot {
   background: #fff;
   border-radius: 32px;
@@ -54,7 +89,8 @@ model-viewer {
   transform: translateY(-50%);
 }
 
-.HotspotAnnotation{
+/* Estilo refinado de las anotaciones */
+.HotspotAnnotation {
   background: #fff;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
@@ -79,7 +115,7 @@ model-viewer {
   transition: transform 0.3s, opacity 0.3s;
 }
 
-
+/* Barra de progreso */
 .progress-bar {
   display: block;
   width: 33%;
@@ -109,6 +145,7 @@ model-viewer {
   transition: width 0.3s;
 }
 
+/* Botón AR */
 #ar-button {
   background-image: url(ar_icon.png);
   background-repeat: no-repeat;
@@ -142,6 +179,7 @@ model-viewer {
   outline: 1px solid #4285f4;
 }
 
+/* Animaciones del prompt AR */
 @keyframes circle {
   from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
   to   { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
